@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Details</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Task Details</h1>
+
+    <div id="taskDetails">
+        <p>Loading task...</p>
+    </div>
+
+    <button onclick="window.location.href='/dashboard/'">
+        Back to Tasks
+    </button>
+
+</div>
+
+<script src="{% static 'js/task_detail.js' %}"></script>
+
+</body>
+</html>

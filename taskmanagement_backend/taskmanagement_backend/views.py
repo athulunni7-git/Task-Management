@@ -27,3 +27,8 @@ class AddTask(View):
 class EditTask(View):
     def get(self, request):
         return render(request, 'edit_task.html')
+    
+    
+class TaskDetails(View):
+    def get(self, request):
+        return render(request, 'task_detail.html')

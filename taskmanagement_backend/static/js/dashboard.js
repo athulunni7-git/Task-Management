@@ -66,38 +66,15 @@ function displayTasks(tasks) {
     tasks.forEach(function(task) {
 
         taskList.innerHTML += `
+    <div class="task">
+        <h3>${task.title}</h3>
+        <p>${task.description || "No description"}</p>
 
-            <div class="task">
-
-                <h3>${task.title}</h3>
-
-                <p>
-                    ${task.description || "No description"}
-                </p>
-
-                <p>
-                    Status: ${task.status}
-                </p>
-
-                <p>
-                    Priority: ${task.priority}
-                </p>
-
-                <p>
-                    Due Date: ${task.due_date || "No due date"}
-                </p>
-
-                <button onclick="editTask(${task.id})">
-                    Edit
-                </button>
-
-                <button onclick="deleteTask(${task.id})">
-                    Delete
-                </button>
-
-            </div>
-
-        `;
+        <button onclick="viewTask(${task.id})">View</button>
+        <button onclick="editTask(${task.id})">Edit</button>
+        <button onclick="deleteTask(${task.id})">Delete</button>
+    </div>
+`;
     });
 }
 
@@ -185,6 +162,10 @@ function editTask(id) {
 
     window.location.href =
         "/edit-task/?id=" + id;
+}
+
+function viewTask(id) {
+    window.location.href = "/task-detail/?id=" + id;
 }
 
 function logout() {

@@ -20,6 +20,7 @@ from .views import LoginPage, RegisterPage
 from .views import TaskList 
 from .views import AddTask
 from .views import EditTask
+from .views import TaskDetails
 
 
 urlpatterns = [
@@ -33,4 +34,5 @@ urlpatterns = [
     path('dashboard/', TaskList.as_view(), name='dashboard'),
     path('task-form/', AddTask.as_view(), name='task-form'),
     path('edit-task/', EditTask.as_view(), name='edit-task'),
+    path('task-detail/', TaskDetails.as_view(), name='task-detail'),
 ]
