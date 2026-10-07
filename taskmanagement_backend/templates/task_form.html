@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add Task</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Add Task</h1>
+
+    <form id="taskForm">
+
+        <input
+            type="text"
+            id="title"
+            placeholder="Task title"
+            required
+        >
+
+        <textarea
+            id="description"
+            placeholder="Description"
+        ></textarea>
+
+
+        <select id="status">
+
+            <option value="todo">
+                Todo
+            </option>
+
+            <option value="in_progress">
+                In Progress
+            </option>
+
+            <option value="completed">
+                Completed
+            </option>
+
+        </select>
+
+
+        <select id="priority">
+
+            <option value="low">
+                Low
+            </option>
+
+            <option value="medium" selected>
+                Medium
+            </option>
+
+            <option value="high">
+                High
+            </option>
+
+        </select>
+
+
+        <input
+            type="date"
+            id="due_date"
+        >
+
+
+        <button type="submit">
+            Add Task
+        </button>
+
+    </form>
+
+
+    <p id="message"></p>
+
+
+    <button onclick="window.location.href='/dashboard/'">
+        Back to Tasks
+    </button>
+
+</div>
+
+
+<script src="{% static 'js/task_form.js' %}"></script>
+
+</body>
+
+</html>

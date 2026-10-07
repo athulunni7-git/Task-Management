@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+   <nav class="navbar">
+
+    <div class="nav-brand">
+        Task Manager
+    </div>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+
+</nav>
+
+<div class="container">
+
+    <h1>My Tasks</h1>
+
+    <p>
+        Welcome, <span id="username"></span>
+    </p>
+
+
+    
+
+    <div class="filters">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search task by title"
+        >
+
+        <select id="statusFilter">
+
+            <option value="">All Status</option>
+
+            <option value="todo">
+                Todo
+            </option>
+
+            <option value="in_progress">
+                In Progress
+            </option>
+
+            <option value="completed">
+                Completed
+            </option>
+
+        </select>
+
+
+        <select id="priorityFilter">
+
+            <option value="">All Priority</option>
+
+            <option value="low">
+                Low
+            </option>
+
+            <option value="medium">
+                Medium
+            </option>
+
+            <option value="high">
+                High
+            </option>
+
+        </select>
+
+        <button onclick="searchTasks()">
+            Search
+        </button>
+
+        <button onclick="loadTasks()">
+            Reset
+        </button>
+
+    </div>
+
+
+    <br>
+
+
+    <button onclick="window.location.href='/task-form/'">
+        Add Task
+    </button>
+
+
+    <div id="taskList"></div>
+
+</div>
+
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+
+</body>
+
+</html>
